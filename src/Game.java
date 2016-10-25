@@ -19,18 +19,18 @@ public class Game extends Frame {
     private Label pscoredisp;
     private Dialog message;
     private CheckboxGroup choiceCheckbox;
-    Checkbox rock;
-    Checkbox paper;
-    Checkbox scissors;
-    Checkbox spock;
-    Checkbox lizard;
+    private Checkbox rock;
+    private Checkbox paper;
+    private Checkbox scissors;
+    private Checkbox spock;
+    private Checkbox lizard;
     private TextArea resultDisp;
     private TextField txtPlayerScore;
     private TextField txtComputerScore;
     private Button RockPaperScissorsLizardSpock;
     private int temp = 0;
 
-    public Game() {
+    private Game() {
         setLayout(new FlowLayout());
         // "super" Frame (a Container) sets its layout to FlowLayout, which arranges
         // the components from left-to-right, and flow to next row from top-to-bottom.
@@ -88,9 +88,9 @@ public class Game extends Frame {
 
 
     // inner class
-    class MyActionListener implements ActionListener {
+    private class MyActionListener implements ActionListener {
         //@Override
-        String ans= new String();
+        String ans = "";
         Checkbox temp= new Checkbox();
         int playerscore = 0,computerscore = 0;
         private boolean flag =true;
@@ -152,7 +152,7 @@ public class Game extends Frame {
             txtPlayerScore.setText(Integer.toString(playerscore));
             txtComputerScore.setText(Integer.toString(computerscore));
             if (computerscore >= 5 || playerscore >= 5) {
-                String strwinner = new String();
+                String strwinner = "";
                 if (computerscore == 5) {
                     strwinner = "COMPUTER WINS!";
                 } else if (playerscore == 5){
@@ -197,7 +197,7 @@ public class Game extends Frame {
 
 
     private String getComString(int comChoice){
-        String ans= new String();
+        String ans= "";
         if (comChoice == 1){
             ans= "Computer chose ROCK\n";
         }
