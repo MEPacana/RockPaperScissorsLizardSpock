@@ -85,8 +85,7 @@ public class Game extends Frame {
             }
         });
     }
-
-
+    
     private class MyActionListener implements ActionListener {
         //@Override
         String ans = "";
